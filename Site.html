@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Christmas Mask Doge</title>
+  <style>
+    /* Reset / Basic */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 
+      Repeated grid background:
+      - "Christmas Mask Doge.png" is repeated as a grid/tile.
+      - background-size adjusts the tile dimension (200px auto here).
+    */
+    body {
+      background: #f8f9fa url("Christmas Mask Doge.png") repeat center top;
+      background-size: 200px auto;
+      font-family: "Arial", sans-serif;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    header, footer {
+      background-color: #dc3545; /* Festive red */
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      position: relative;
+      z-index: 2; /* Keep header & footer above floating images */
+    }
+
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 1rem;
+    }
+
+    main {
+      position: relative;
+      z-index: 2; /* Keep main content above floating images */
+      backdrop-filter: blur(6px); /* Slight blur effect for readability */
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #28a745; /* Green accent */
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #28a745; /* Green */
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #218838;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+    /* 
+      This container holds the floating images behind everything.
+      pointer-events: none ensures clicks pass through to links below.
+    */
+    #floating-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1; /* Behind header, footer, and main */
+    }
+
+    /* The floating Doge images themselves */
+    .floating-doge {
+      position: absolute;
+      width: 100px; /* Adjust size as desired */
+      height: auto;
+      animation-name: floatDoge;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    /*
+      Keyframes to simulate floating, flipping, and movement.
+      Adjust rotation angles, translations, and scaleX flips
+      to get your desired effect.
+    */
+    @keyframes floatDoge {
+      0% {
+        transform: translate(0, 0) rotate(0deg) scaleX(1);
+      }
+      25% {
+        transform: translate(50px, -80px) rotate(180deg) scaleX(-1);
+      }
+      50% {
+        transform: translate(-40px, 60px) rotate(360deg) scaleX(1);
+      }
+      75% {
+        transform: translate(30px, -30px) rotate(540deg) scaleX(-1);
+      }
+      100% {
+        transform: translate(0, 0) rotate(720deg) scaleX(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Merry Christmas Mask Doge</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#buy-now">How to Buy</a>
+    </nav>
+  </header>
+
+  <!-- Floating images container -->
+  <div id="floating-container"></div>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        <strong>Christmas Mask Doge</strong> is a jolly meme coin celebrating holiday cheer 
+        and the spirit of giving. Inspired by a Shiba Inu sporting a cozy winter mask, 
+        this token spreads festive vibes across the crypto universe.
+      </p>
+      <p>
+        Join us in our goal to make the crypto community a warmer place during the 
+        holiday season—and beyond!
+      </p>
+    </section>
+
+    <section id="tokenomics">
+      <h2>Tokenomics</h2>
+      <p><strong>Symbol:</strong> CMDOGE</p>
+    </section>
+
+    <section id="roadmap">
+      <h2>Roadmap</h2>
+      <p><strong>Phase 1:</strong> Festive Launch, Meme Contests, Community Building</p>
+      <p><strong>Phase 2:</strong> Holiday Charity Drives, Partnerships, Coin Listings</p>
+      <p><strong>Phase 3:</strong> NFT Collections, Expanded Marketing, Seasonal Events</p>
+    </section>
+
+    <section id="buy-now">
+      <h2>How to Buy</h2>
+      <p>
+        1. Install a wallet that supports the Solana network (e.g., Phantom). <br>
+        2. Transfer some SOL to your wallet to cover gas fees and the purchase. <br>
+        3. Visit our swap link below and exchange for CMDOGE. <br>
+      </p>
+      <a 
+        class="btn" 
+        href="https://pump.fun/coin/jaWrq7baDWbTKeqzJQRa8T8NCn3nLqvPc9vZrANpump"
+        target="_blank"
+      >
+        Buy CMDOGE
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Christmas Mask Doge. All Rights Reserved.</p>
+    <p>Disclaimer: Not financial advice. Always DYOR (Do Your Own Research).</p>
+  </footer>
+
+  <script>
+    // Number of floating doge images
+    const numberOfImages = 8;
+
+    // Get the floating container
+    const floatingContainer = document.getElementById('floating-container');
+
+    for (let i = 0; i < numberOfImages; i++) {
+      // Create a new img
+      const dogeImg = document.createElement('img');
+      dogeImg.src = 'Christmas Mask Doge.png'; // Must match your file path
+      dogeImg.alt = 'Christmas Mask Doge';
+      dogeImg.classList.add('floating-doge');
+
+      // Random initial position within the viewport (roughly 80% max to stay mostly on-screen)
+      const randomTop = Math.random() * 80;
+      const randomLeft = Math.random() * 80;
+      dogeImg.style.top = randomTop + 'vh';
+      dogeImg.style.left = randomLeft + 'vw';
+
+      // Random animation duration between 8s and 20s
+      const randomDuration = 8 + Math.random() * 12; 
+      dogeImg.style.animationDuration = randomDuration + 's';
+
+      floatingContainer.appendChild(dogeImg);
+    }
+  </script>
+</body>
+</html>
